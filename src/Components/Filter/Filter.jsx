@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { createUseStyles } from 'react-jss';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilter } from '../../redux/contacts/contacts-selectors';
@@ -25,6 +24,7 @@ const Filter = () => {
   const s = useStyles();
   const dispatch = useDispatch();
   const filter = useSelector(getFilter);
+
   const handleFilterChange = e => {
     dispatch(changeFilter(e.target.value));
   };
@@ -40,9 +40,5 @@ const Filter = () => {
     </label>
   );
 };
-// Filter.propTypes = {
-//   onChange: PropTypes.func.isRequired,
-//   value: PropTypes.string,
-// };
 
 export default Filter;

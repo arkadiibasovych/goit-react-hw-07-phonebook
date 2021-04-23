@@ -1,8 +1,10 @@
 import { createUseStyles } from 'react-jss';
 
 import ContactListItem from './ContactListItem';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { getVisibleContacts } from '../../redux/contacts/contacts-selectors';
+import { useEffect } from 'react';
+import { fetchContacts } from '../../redux/contacts/contacts-operations';
 
 const useStyles = createUseStyles({
   list: {
@@ -11,6 +13,12 @@ const useStyles = createUseStyles({
   },
 });
 const ContactList = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, []);
+
   const contacts = useSelector(getVisibleContacts);
   const s = useStyles();
   return (

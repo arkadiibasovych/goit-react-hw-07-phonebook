@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from '../../redux/contacts/contacts-selectors';
-import { addContact } from '../../redux/contacts/contacts-actions';
+import { addContact } from '../../redux/contacts/contacts-operations';
 
 const useStyles = createUseStyles({
   form: {

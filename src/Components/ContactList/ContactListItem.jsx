@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contacts/contacts-actions';
+import { deleteContact } from '../../redux/contacts/contacts-operations';
 
 const useStyles = createUseStyles({
   listItem: {
